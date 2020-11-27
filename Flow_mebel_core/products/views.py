@@ -11,10 +11,13 @@ def get_all(request):
     return render(request=request, template_name='products/products.html', context=context)
 
 
-def create(request): 
+def create(request, id): 
     form = OrderForm(request.POST, request.FILES)
     if form.is_valid():
-        form.save()
+        order = form.save(commit=False)
+        order.product = Product.objects.get(pk=id)
+        order.save()
+        form.save_m2m()
     return redirect('products')
 
 def detail_prod(request, id):

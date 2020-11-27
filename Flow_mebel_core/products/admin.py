@@ -25,6 +25,6 @@ class Image_for_prodAdmin(admin.ModelAdmin):
 
 @admin.register(Material)
 class MaterialAdmin(admin.ModelAdmin):
-    list_display = ('name', 'image')
+    list_display = ('name', )
     search_fields = ['name']
     list_filter = ('name',)

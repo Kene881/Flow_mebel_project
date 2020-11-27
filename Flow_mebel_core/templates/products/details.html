@@ -21,7 +21,7 @@
             </div>
         </div>
     {% endfor %}
-    <form method="POST" action="{% url 'create' %}" enctype="multipart/form-data">
+    <form method="POST" action="{% url 'create' id=product.id %}" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-group">
         <label>First name</label>
@@ -38,10 +38,10 @@
             {{OrderForm.phone_number}}
         </div>
 
-        <div class="form-group">
+        {% comment %} <div class="form-group">
         <label>Product</label>
             {{OrderForm.product}}
-        </div>
+        </div> {% endcomment %}
 
         <div class="form-group">
         <label>Material</label>
