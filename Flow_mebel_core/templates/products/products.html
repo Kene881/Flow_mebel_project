@@ -6,14 +6,13 @@
         <div class="row">
             <div class="col-sm">
                 {% if product.image %}
-                    <img class="card-img-top" src="{{product.image.url}}" alt="Card image cap" width="70%" height="90%">
+                    <a href="{% url 'details' id=product.id %}"><img class="card-img-top" src="{{product.image.url}}" alt="Card image cap" width="70%" height="90%"></a>
                 {% endif %}
             </div>
             <div class="col-sm mt-5">
                 <h1 class="mt-5">{{ product.title }}</h1>
                 <h6 class="mt-5">{{ product.description }}</h6>
                 <h2 class="mt-5">{{ product.cost }}</h2>
-                <button type="button" class="btn btn-dark mt-5">Buy</button>
             </div>
         </div>
     {% endfor %}
