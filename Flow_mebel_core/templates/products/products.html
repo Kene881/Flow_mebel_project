@@ -1,18 +1,27 @@
 {% extends 'core/main_wrapper.html' %}
 
 {% block main %}
-<div class="card-group">
+<div class="container">
         {% for product in items %}
-            <div class="mb-5 mt-3 mr-4" style="max-width: 30%; min-width: 30%">
-                {% if product.image %}
-                    <img class="card-img-top" src="{{product.image.url}}" alt="Card image cap" width="85%" height="85%">
-                {% endif %}
-                {% comment %} background-color: rgb(238, 224, 169);  {% endcomment %}
-                <div class="">
-                    <h6 class="mt-2 text-center">{{ product.title }}
-                    </h6>
+            <div class="row">
+                <div class="col-sm">
+                    {% if product.image %}
+                        <img class="card-img-top" src="{{product.image.url}}" alt="Card image cap" width="70%" height="70%">
+                    {% endif %}
+                </div>
+                <div class="col-sm">
+                    <h1 class="mt-2">{{ product.title }}</h1>
                 </div>
             </div>
+            {% comment %} <div class="mb-5 mt-3 ml-5" style="max-width: 50%; min-width: 50%">
+                {% if product.image %}
+                    <img class="card-img-top" src="{{product.image.url}}" alt="Card image cap" width="70%" height="70%">
+                {% endif %}
+                <h1 class="mt-2">{{ product.title }}</h1>
+                <div class="float-left">
+                    <h1 class="mt-2">{{ product.title }}</h1>
+                </div>
+            </div> {% endcomment %}
         {% endfor %}
     </div>
 {% endblock  %}
