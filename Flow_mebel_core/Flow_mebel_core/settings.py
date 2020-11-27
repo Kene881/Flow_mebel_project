@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'auth_user.apps.AuthUserConfig',
     'products.apps.ProductsConfig',
+    'home.apps.HomeConfig',
 ]
 
 MIDDLEWARE = [
