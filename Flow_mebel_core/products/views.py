@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
 from .models import Product, Image_for_prod
+from .forms import OrderForm
 
 # Create your views here.
 def get_all(request):
@@ -14,6 +15,7 @@ def detail_prod(request, id):
     all_images = Image_for_prod.objects.all().filter(product = p)
     context = {
         'product': p,
-        'images': all_images
+        'images': all_images,
+        'OrderForm':OrderForm()
     }
     return render(request,'products/details.html', context=context)
