@@ -1,5 +1,18 @@
 {% extends 'core/main_wrapper.html' %}
 
 {% block main %}
-Hello world
+<div class="card-group">
+        {% for product in items %}
+            <div class="mb-5 mt-3 mr-4" style="max-width: 30%; min-width: 30%">
+                {% if product.image %}
+                    <img class="card-img-top" src="{{product.image.url}}" alt="Card image cap" width="85%" height="85%">
+                {% endif %}
+                {% comment %} background-color: rgb(238, 224, 169);  {% endcomment %}
+                <div class="">
+                    <h6 class="mt-2 text-center">{{ product.title }}
+                    </h6>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock  %}
