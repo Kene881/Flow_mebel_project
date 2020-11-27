@@ -1,19 +1,16 @@
 {% extends 'core/main_wrapper.html' %}
 
 {% block main %}
-<div class="card-group container">
+<div class="card-group">
         {% for product in items %}
-            <div class="mb-5 mt-3" style="max-width: 100%; min-width: 100%; border: 1px solid #3f3f3f;">
+            <div class="mb-5 mt-3 mr-4" style="max-width: 30%; min-width: 30%">
                 {% if product.image %}
-                    <img class="card-img-top" src="{{product.image.url}}" alt="Card image cap" width="70" height="560">
+                    <img class="card-img-top" src="{{product.image.url}}" alt="Card image cap" width="85%" height="85%">
                 {% endif %}
                 {% comment %} background-color: rgb(238, 224, 169);  {% endcomment %}
-                <div class="card-body" style="padding: 10px;">
-                    <h5 class="card-title">{{ product.title }}
-                    </h5>
-                    <p class="card-text text-truncate">{{ product.description }}</p>
-                    <a type="button" class="btn btn-outline-dark" href="{{ product.get_absolute_url }}">View product</a>
-                    <h3 class="card-text text-truncate float-right text-dark">{{ product.cost }}</h3>
+                <div class="">
+                    <h6 class="mt-2 text-center">{{ product.title }}
+                    </h6>
                 </div>
             </div>
         {% endfor %}
