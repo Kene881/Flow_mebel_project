@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from .models import Product
+from .models import Product, Image_for_prod
 
 # Create your views here.
 def get_all(request):
@@ -8,3 +8,12 @@ def get_all(request):
         'items': products
     }
     return render(request=request, template_name='products/products.html', context=context)
+
+def detail_prod(request, id):
+    p = Product.objects.get(pk = id)
+    all_images = Image_for_prod.objects.all().filter(product = p)
+    context = {
+        'product': p,
+        'images': all_images
+    }
+    return render(request,'products/details.html', context=context)
