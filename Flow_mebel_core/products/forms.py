@@ -6,7 +6,7 @@ from .models import Order
 class OrderForm(forms.ModelForm):
     
     def __init__(self, *args, **kwargs):
-        super(NewsForm, self).__init__(*args, **kwargs)
+        super(OrderForm, self).__init__(*args, **kwargs)
 
         self.fields['first_name'].widget.attrs['placeholder'] = 'Your firstname'
         self.fields['first_name'].widget.attrs['class'] = 'form-control'
@@ -19,5 +19,5 @@ class OrderForm(forms.ModelForm):
         self.fields['size'].widget.attrs['class'] = 'form-control'
 
     class Meta:
-        model = News
+        model = Order
         fields = ['first_name', 'last_name', 'phone_number', 'product', 'material', 'size']
