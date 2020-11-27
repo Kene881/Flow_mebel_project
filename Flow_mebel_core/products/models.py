@@ -8,3 +8,22 @@ class Product(models.Model):
     
     def __str__(self):
         return f'Product: {self.title}'
+
+
+class Material(models.Model):
+    name = models.CharField(max_length=200)
+    image = models.CharField(max_length=255)
+
+
+class Order(models.Model):
+    SIZES = [
+        ('s', 'small'),
+        ('m', 'medium'),
+        ('l', 'large')
+    ]
+    first_name = models.CharField(max_length=200)
+    last_name = models.CharField(max_length=200)
+    phone_number = models.CharField(max_length=20)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    size = models.CharField(max_length=20, choices=SIZES, default='m')
+    material = models.ForeignKey(Material, on_delete=models.SET_DEFAULT, default=1)
