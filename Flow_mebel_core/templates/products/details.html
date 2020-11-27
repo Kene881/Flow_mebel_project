@@ -1,11 +1,11 @@
 {% extends 'core/main_wrapper.html' %}
 
 {% block main %}
-<div class = "container">
+<div class = "container pt-5">
      <div class="row">
             <div class="col-sm">
                 {% if product.image %}
-                    <a href="{% url 'details' id=product.id %}"><img class="card-img-top" src="{{product.image.url}}" alt="Card image cap" width="70%" height="90%"></a>
+                    <img class="card-img-top" src="{{product.image.url}}" alt="Card image cap" width="70%" height="90%">
                 {% endif %}
             </div>
             <div class="col-sm mt-5">
@@ -21,7 +21,7 @@
             </div>
         </div>
     {% endfor %}
-    <form method="POST" action="{% url 'create' id=product.id %}" enctype="multipart/form-data">
+    <form class="col-s-12 col-md-10 col-lg-6" method="POST" action="{% url 'create' id=product.id %}" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-group">
         <label>First name</label>
