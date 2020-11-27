@@ -1,12 +1,15 @@
 {% extends 'core/main_wrapper.html' %}
+{% load static %}
 
 {% block main %}
 {% if items %}
     {% for product in items %}
-        <div class="row">
+        <div class="row py-5">
             <div class="col-sm">
                 {% if product.image %}
-                    <a href="{% url 'details' id=product.id %}"><img class="card-img-top" src="{{product.image.url}}" alt="Card image cap" width="70%" height="90%"></a>
+                    <a href="{% url 'details' id=product.id %}"><img class="card-img-top rounded" src="{{product.image.url}}" alt="Card image cap" width="70%" height="90%"></a>
+                {% else %}
+                    <a href="{% url 'details' id=product.id %}"><img class="card-img-top rounded" src="{% static 'assets/photos/images/default_img.png' %}" alt="Card image cap" width="70%" height="90%"></a>
                 {% endif %}
             </div>
             <div class="col-sm mt-5">
@@ -16,6 +19,7 @@
             </div>
         </div>
     {% endfor %}
+    <div class="mb-5 py-5"></div>
 {% else %}
     <div class="row py-5">
         <div class="col-md-12 p-5 d-flex flex-column align-items-center">
