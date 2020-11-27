@@ -19,5 +19,5 @@ class OrderForm(forms.ModelForm):
         self.fields['size'].widget.attrs['class'] = 'form-control'
 
     class Meta:
-        model = News
+        model = Order
         fields = ['first_name', 'last_name', 'phone_number', 'product', 'material', 'size']
