@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import Product
+from .forms import RegistrationForm
 
 # Create your views here.
 def get_all(request):
@@ -8,3 +9,9 @@ def get_all(request):
         'items': products
     }
     return render(request=request, template_name='products/products.html', context=context)
+
+def register(request):
+    form = RegistrationForm(request.POST, request.FILES)
+    if form.is_valid():
+        form.save()
+    return redirect('products')
