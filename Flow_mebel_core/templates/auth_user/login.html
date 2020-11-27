@@ -7,28 +7,18 @@
 
         <title>Login</title>
 
-        <meta name="description" content="OneUI - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
         <meta name="author" content="pixelcave">
         <meta name="robots" content="noindex, nofollow">
 
-        <!-- Open Graph Meta -->
-        <meta property="og:title" content="OneUI - Bootstrap 4 Admin Template &amp; UI Framework">
-        <meta property="og:site_name" content="OneUI">
-        <meta property="og:description" content="OneUI - Bootstrap 4 Admin Template &amp; UI Framework created by pixelcave and published on Themeforest">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="">
-        <meta property="og:image" content="">
-
         <!-- Icons -->
         <!-- The following icons can be replaced with your own, they are used by desktop and mobile browsers -->
-        <link rel="shortcut icon" href="{% static 'assets/media/favicons/favicon.png' %}">
-        <link rel="icon" type="image/png" sizes="192x192" href="{% static 'assets/media/favicons/favicon-192x192.png' %}">
-        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/media/favicons/apple-touch-icon-180x180.png' %}">
+        {% comment %} <link rel="shortcut icon" href="">
+        <link rel="icon" type="image/png" sizes="192x192" href="">
+        <link rel="apple-touch-icon" sizes="180x180" href=""> {% endcomment %}
         <!-- END Icons -->
 
-        <!-- Fonts and OneUI framework -->
+        <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600,700%7COpen+Sans:300,400,400italic,600,700">
-        <link rel="stylesheet" id="css-main" href="{% static 'assets/css/oneui.min.css' %}">
 
     </head>
     <body>
@@ -49,7 +39,7 @@
                                         <div class="block-header">
                                             <h3 class="block-title">Sign In</h3>
                                             <div class="block-options">
-                                                <a class="btn-block-option" href="{% url 'register' %}" data-toggle="tooltip" data-placement="left" title="New Account">
+                                                <a class="btn-block-option" href="#" data-toggle="tooltip" data-placement="left" title="New Account">
                                                     Create an account
                                                 </a>
                                             </div>
@@ -59,15 +49,10 @@
                                                 <h1 class="mb-2">OneUI</h1>
                                                 <p>Welcome, please login.</p>
 
-                                                <form class="js-validation-signin" action="{% url 'login' %}" method="POST">
+                                                <form class="js-validation-signin" action="#" method="POST">
                                                     {% csrf_token %}
                                                     <div class="py-3">
-                                                        <div class="form-group">
-                                                            <input type="text" class="form-control form-control-alt form-control-lg" id="login-username" name="username" placeholder="Username">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="password" class="form-control form-control-alt form-control-lg" id="login-password" name="password" placeholder="Password">
-                                                        </div>
+                                                        <!--Form-->
                                                     </div>
                                                     <div class="form-group row">
                                                         <div class="col-md-6 col-xl-5">
@@ -77,16 +62,12 @@
                                                         </div>
                                                     </div>
                                                 </form>
-                                                <!-- END Sign In Form -->
                                             </div>
                                         </div>
                                     </div>
                                     <!-- END Sign In Block -->
                                 </div>
                             </div>
-                        </div>
-                        <div class="content content-full font-size-sm text-muted text-center">
-                            <strong>OneUI 4.3</strong> &copy; <span data-toggle="year-copy"></span>
                         </div>
                     </div>
                 </div>
@@ -97,36 +78,5 @@
         </div>
         <!-- END Page Container -->
 
-        <!--
-            OneUI JS Core
-
-            Vital libraries and plugins used in all pages. You can choose to not include this file if you would like
-            to handle those dependencies through webpack. Please check out assets/_es6/main/bootstrap.js for more info.
-
-            If you like, you could also include them separately directly from the assets/js/core folder in the following
-            order. That can come in handy if you would like to include a few of them (eg jQuery) from a CDN.
-
-            assets/js/core/jquery.min.js
-            assets/js/core/bootstrap.bundle.min.js
-            assets/js/core/simplebar.min.js
-            assets/js/core/jquery-scrollLock.min.js
-            assets/js/core/jquery.appear.min.js
-            assets/js/core/js.cookie.min.js
-        -->
-        <script src="assets/js/oneui.core.min.js"></script>
-
-        <!--
-            OneUI JS
-
-            Custom functionality including Blocks/Layout API as well as other vital and optional helpers
-            webpack is putting everything together at assets/_es6/main/app.js
-        -->
-        <script src="assets/js/oneui.app.min.js"></script>
-
-        <!-- Page JS Plugins -->
-        <script src="assets/js/plugins/jquery-validation/jquery.validate.min.js"></script>
-
-        <!-- Page JS Code -->
-        <script src="assets/js/pages/op_auth_signin.min.js"></script>
     </body>
 </html>
