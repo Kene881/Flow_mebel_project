@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Product
 from .models import Order
 from .models import Image_for_prod
+from .models import Material
 
 # Register your models here.
 @admin.register(Product)
@@ -21,3 +22,9 @@ class Image_for_prodAdmin(admin.ModelAdmin):
     list_display = ('product', 'image')
     search_fields = ['product']
     list_filter = ('product',)
+
+@admin.register(Material)
+class MaterialAdmin(admin.ModelAdmin):
+    list_display = ('name', 'image')
+    search_fields = ['name']
+    list_filter = ('name',)

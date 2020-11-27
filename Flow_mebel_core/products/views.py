@@ -10,6 +10,13 @@ def get_all(request):
     }
     return render(request=request, template_name='products/products.html', context=context)
 
+
+def create(request): 
+    form = OrderForm(request.POST, request.FILES)
+    if form.is_valid():
+        form.save()
+    return redirect('products')
+
 def detail_prod(request, id):
     p = Product.objects.get(pk = id)
     all_images = Image_for_prod.objects.all().filter(product = p)
