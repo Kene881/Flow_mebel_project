@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-sm">
                 {% if product.image %}
-                    <img class="card-img-top" src="{{product.image.url}}" alt="Card image cap" width="70%" height="90%">
+                    <a href="{% url 'details' id=product.id %}"><img class="card-img-top" src="{{product.image.url}}" alt="Card image cap" width="70%" height="90%"></a>
                 {% endif %}
             </div>
             <div class="col-sm mt-5">
