@@ -2,6 +2,7 @@ from django.forms import ModelForm
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.forms import fields
+from django.forms import PasswordInput
 
 
 class UserForm(UserCreationForm):
@@ -24,6 +25,7 @@ class UserForm(UserCreationForm):
         self.fields['password1'].widget.attrs['id'] = 'password'
         self.fields['password1'].widget.attrs['name'] = 'password'
         self.fields['password1'].widget.attrs['placeholder'] = 'Your Password'
+        self.fields['password1'].widget.attrs['data-toggle'] = 'password'
         self.fields['password2'].widget.attrs['class'] = 'form-input form-input-lg'
         self.fields['password2'].widget.attrs['placeholder'] = 'Confirm password'
         self.fields['password2'].widget.attrs['name'] = 're_password'
@@ -32,3 +34,6 @@ class UserForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['id','username', 'email', 'first_name', 'last_name', 'password1', 'password2']
+        widgets = {
+            "password": PasswordInput(attrs={'placeholder':'********','autocomplete': 'off','data-toggle': 'password'}),
+        }
