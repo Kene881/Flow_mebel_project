@@ -1,7 +1,6 @@
 {% extends 'core/main_wrapper.html' %}
 
 {% block main %}
-this is detail page
 <div class = "container">
      <div class="row">
             <div class="col-sm">
@@ -17,9 +16,9 @@ this is detail page
         </div>
     {% for i in images %}
         <div class="col-sm">
-                <div style = 'margin-bottom:50px;'>
-                    <img class="card-img-top" src="{{i.image.url}}" alt="Card image cap" width="70%" height="90%" >
-                </div>
+            <div style = 'margin-bottom:50px;'>
+                <img class="card-img-top" src="{{i.image.url}}" alt="Card image cap" width="70%" height="90%" >
+            </div>
         </div>
     {% endfor %}
 </div>
