@@ -1,12 +1,7 @@
 {% block navbar %}
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  {% comment %} <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    
-    id="navbarNavDropdown"
-  </button> {% endcomment %}
-  <div class="collapse navbar-collapse justify-content-center">
-    {% comment %} <h1 class="display-3">FLOW mebel</h1> {% endcomment %}
+  <div class="collapse navbar-collapse d-flex justify-content-between">
+  <a class="navbar-brand float-left" href="{% url 'main_page' %}">FLOW mebel</a>
     <ul class="navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'main_page' %}">Home <span class="sr-only">(current)</span></a>
