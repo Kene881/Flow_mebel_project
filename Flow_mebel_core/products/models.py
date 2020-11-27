@@ -12,7 +12,7 @@ class Product(models.Model):
 
 class Material(models.Model):
     name = models.CharField(max_length=200)
-    image = models.CharField(max_length=255)
+    image = models.ImageField(null=True, blank=True)
 
 
 class Order(models.Model):
